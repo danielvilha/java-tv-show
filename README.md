@@ -4,7 +4,9 @@
 
 
 ### Libraries used in the Project
-- 
+- [RxJava](https://github.com/ReactiveX/RxAndroid)
+- [Retrofit](https://square.github.io/retrofit/)
+- [Picasso](https://square.github.io/picasso/)
 
 ### Screenshots
 Home Go | List Desending | List Ascending
