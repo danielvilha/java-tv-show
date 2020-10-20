@@ -7,7 +7,7 @@
 - 
 
 ### Screenshots
-Home Go | List Ascending | List Desending
+Home Go | List Desending | List Ascending
 --- | --- | ---
 ![Image 01](/images/Screenshot_01.jpg) | ![Image 01](/images/Screenshot_02.jpg) | ![Image 03](/images/Screenshot_03.jpg)
 
