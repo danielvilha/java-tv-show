@@ -7,7 +7,9 @@
 - 
 
 ### Screenshots
-![Image](/images/Screenshot.png)
+Home Go | List Ascending | List Desending
+--- | --- | ---
+![Image 01](/images/Screenshot_01.png) | ![Image 01](/images/Screenshot_02.png) | ![Image 03](/images/Screenshot_03.png)
 
 ## Licence
 Copyright 2020 Daniel Freitas Vilha
