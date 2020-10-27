@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow;
+package com.danielvilha.javatvshow.views;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,9 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.danielvilha.javatvshow.R;
 import com.danielvilha.javatvshow.object.TvShow;
+import com.danielvilha.javatvshow.ui.show.TvShowFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

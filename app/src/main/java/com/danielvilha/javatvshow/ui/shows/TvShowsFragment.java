@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow;
+package com.danielvilha.javatvshow.ui.shows;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -17,6 +17,9 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.danielvilha.javatvshow.ui.MainActivity;
+import com.danielvilha.javatvshow.R;
+import com.danielvilha.javatvshow.views.TvShowAdapter;
 import com.danielvilha.javatvshow.object.TvShow;
 import com.danielvilha.javatvshow.service.ApiService;
 import com.danielvilha.javatvshow.service.RetrofitBuilder;

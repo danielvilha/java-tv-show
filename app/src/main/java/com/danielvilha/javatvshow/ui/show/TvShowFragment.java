@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow;
+package com.danielvilha.javatvshow.ui.show;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.danielvilha.javatvshow.ui.MainActivity;
+import com.danielvilha.javatvshow.R;
 import com.danielvilha.javatvshow.object.TvShow;
 import com.squareup.picasso.Picasso;
 

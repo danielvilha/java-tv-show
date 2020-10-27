@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow;
+package com.danielvilha.javatvshow.ui.go;
 
 import android.os.Bundle;
 
@@ -11,6 +11,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+import com.danielvilha.javatvshow.ui.MainActivity;
+import com.danielvilha.javatvshow.R;
+import com.danielvilha.javatvshow.ui.shows.TvShowsFragment;
 
 /**
  * Created by danielvilha on 18/10/20

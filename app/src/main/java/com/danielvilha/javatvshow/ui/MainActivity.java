@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow;
+package com.danielvilha.javatvshow.ui;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.danielvilha.javatvshow.R;
+import com.danielvilha.javatvshow.ui.go.GoFragment;
+import com.danielvilha.javatvshow.ui.shows.TvShowsFragment;
 
 /**
  * Created by danielvilha on 18/10/20
