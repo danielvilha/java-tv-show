@@ -3,6 +3,16 @@
 ### Overview
 
 
+### Something I need to change
+- Structure (folders and organisation): 2/5
+- Tidiness (keep code nicely presented): 4/5
+- Practices (use of patterns and platform-specific best practices): 3/5
+- Frameworks: ✅
+- Customisations: 0/5
+- UI Tests: ✅
+- Unit Tests: ✅
+- Functionality: 4/5
+
 ### Libraries used in the Project
 - [RxJava](https://github.com/ReactiveX/RxAndroid)
 - [Retrofit](https://square.github.io/retrofit/)

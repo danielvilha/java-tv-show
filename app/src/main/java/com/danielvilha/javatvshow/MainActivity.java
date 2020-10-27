@@ -1,14 +1,20 @@
 package com.danielvilha.javatvshow;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+/**
+ * Created by danielvilha on 18/10/20
+ * https://github.com/danielvilha
+ */
 public class MainActivity extends AppCompatActivity {
     public Toolbar toolbar;
 
@@ -40,19 +46,20 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         if (item.getItemId() == R.id.sort_button) {
-            Fragment fragment = new TvShowsFragment();
-            ((TvShowsFragment) fragment).clickMenu();
-            if (((TvShowsFragment) fragment).isSort) {
-                item.setTitle(getString(R.string.sort_descending));
-            } else {
-                item.setTitle(getString(R.string.sort_ascending));
-            }
+            TvShowsFragment fragment = new TvShowsFragment();
+            fragment.clickMenu();
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        return super.onPrepareOptionsMenu(menu);
     }
 }

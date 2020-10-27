@@ -2,20 +2,19 @@ package com.danielvilha.javatvshow;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- *
+ * Created by danielvilha on 18/10/20
+ * https://github.com/danielvilha
  */
 public class GoFragment extends Fragment {
     public static String TAG = GoFragment.class.getSimpleName();
@@ -39,16 +38,13 @@ public class GoFragment extends Fragment {
         ((MainActivity) getActivity()).toolbar.setTitle(getString(R.string.app_name));
 
         Button buttonGo = getActivity().findViewById(R.id.button_go);
-        buttonGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Fragment newFragment = new TvShowsFragment();
-                FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+        buttonGo.setOnClickListener(view -> {
+            Fragment newFragment = new TvShowsFragment();
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
-                transaction.replace(R.id.container, newFragment);
-                transaction.addToBackStack(TvShowsFragment.TAG);
-                transaction.commit();
-            }
+            transaction.replace(R.id.container, newFragment);
+            transaction.addToBackStack(TvShowsFragment.TAG);
+            transaction.commit();
         });
     }
 

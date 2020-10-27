@@ -53,7 +53,7 @@ public class TvShowsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_movies, container, false);
+        return inflater.inflate(R.layout.fragment_tv_shows, container, false);
     }
 
     @Override
@@ -91,8 +91,11 @@ public class TvShowsFragment extends Fragment {
                     public void onNext(@NonNull TvShow tvShow) {
                         item = tvShow;
 
-                        if (!tvShow.results.isEmpty()) {
-                            adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) tvShow.results);
+                        if (!item.results.isEmpty()) {
+                            Comparator<TvShow.TvShowItem> compareByName = (TvShow.TvShowItem tv1, TvShow.TvShowItem tv2) -> tv1.name.compareTo(tv2.name);
+                            Collections.sort(item.results, compareByName);
+
+                            adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) item.results, getActivity());
                             recycler.setAdapter(adapter);
                         }
                     }
@@ -120,20 +123,20 @@ public class TvShowsFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void clickMenu() {
         if (item != null) {
-            if (!isSort) {
+            if (isSort) {
                 Comparator<TvShow.TvShowItem> compareByName = (TvShow.TvShowItem m1, TvShow.TvShowItem m2) -> m1.name.compareTo(m2.name);
                 Collections.sort(item.results, compareByName);
 
-                adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) item.results);
+                adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) item.results, getActivity());
                 recycler.setAdapter(adapter);
-                isSort = true;
+                isSort = false;
             } else {
                 Comparator<TvShow.TvShowItem> compareByName = (TvShow.TvShowItem m1, TvShow.TvShowItem m2) -> m1.name.compareTo(m2.name);
                 Collections.sort(item.results, compareByName.reversed());
 
-                adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) item.results);
+                adapter = new TvShowAdapter((ArrayList<TvShow.TvShowItem>) item.results, getActivity());
                 recycler.setAdapter(adapter);
-                isSort = false;
+                isSort = true;
             }
         }
     }

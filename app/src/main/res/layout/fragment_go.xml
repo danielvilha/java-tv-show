@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GoFragment" >
+    tools:context=".GoFragment">
 
     <Button
         android:id="@+id/button_go"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="50dp"
+        android:paddingStart="70dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="70dp"
+        android:paddingBottom="10dp"
         android:text="@string/go"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

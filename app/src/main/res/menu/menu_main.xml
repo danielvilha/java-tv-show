@@ -4,6 +4,6 @@
 
     <item
         android:id="@+id/sort_button"
-        android:title="@string/sort_ascending"
+        android:title="@string/sort"
         app:showAsAction="ifRoom|withText" />
 </menu>

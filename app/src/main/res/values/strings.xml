@@ -1,10 +1,14 @@
 <resources>
     <string name="app_name">TV Show</string>
 
-
     <string name="image_film">Image Film</string>
     <string name="go">Go</string>
     <string name="detail">Detail</string>
-    <string name="sort_ascending">Sort Ascending</string>
-    <string name="sort_descending">Sort Descending</string>
+    <string name="sort">Sort</string>
+    <string name="overview">Overview</string>
+
+    <string name="popularity">Popularity</string>
+    <string name="vote_count">Vote count</string>
+    <string name="vote_average">Vote average</string>
+    <string name="genre">Genre</string>
 </resources>
