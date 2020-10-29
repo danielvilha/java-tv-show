@@ -1,4 +1,4 @@
-package com.danielvilha.javatvshow.object;
+package com.danielvilha.javatvshow.models;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
  * Created by danielvilha on 18/10/20
  * https://github.com/danielvilha
  */
-public class TvShow {
+public class TopRated {
     @SerializedName("page")
     public Integer page;
     @SerializedName("total_results")
@@ -17,9 +17,9 @@ public class TvShow {
     @SerializedName("total_pages")
     public Integer total_pages;
     @SerializedName("results")
-    public ArrayList<TvShowItem> results;
+    public ArrayList<TopRatedResult> results;
 
-    public TvShow(Integer page, Integer total_results, Integer total_pages, ArrayList<TvShowItem> results) {
+    public TopRated(Integer page, Integer total_results, Integer total_pages, ArrayList<TopRatedResult> results) {
         this.page = page;
         this.total_results = total_results;
         this.total_pages = total_pages;
@@ -27,9 +27,9 @@ public class TvShow {
     }
 
     /**
-     * A movie item representing a piece of content.
+     * Here presents a top rated result.
      */
-    public static class TvShowItem implements Serializable {
+    public static class TopRatedResult implements Serializable, Comparable<TopRatedResult> {
         @SerializedName("original_name")
         public final String original_name;
         @SerializedName("id")
@@ -57,7 +57,7 @@ public class TvShow {
         @SerializedName("origin_country")
         public final ArrayList<String> origin_country;
 
-        public TvShowItem(String original_name, Integer id, String name, Float popularity, Integer vote_count, Float vote_average, String first_air_date, String poster_path, ArrayList<String> genre_ids, String original_language, String backdrop_path, String overview, ArrayList<String> origin_country) {
+        public TopRatedResult(String original_name, Integer id, String name, Float popularity, Integer vote_count, Float vote_average, String first_air_date, String poster_path, ArrayList<String> genre_ids, String original_language, String backdrop_path, String overview, ArrayList<String> origin_country) {
             this.original_name = original_name;
             this.id = id;
             this.name = name;
@@ -71,6 +71,11 @@ public class TvShow {
             this.backdrop_path = backdrop_path;
             this.overview = overview;
             this.origin_country = origin_country;
+        }
+
+        @Override
+        public int compareTo(TopRatedResult topRatedResult) {
+            return this.name.compareTo(topRatedResult.name);
         }
     }
 }

@@ -13,7 +13,7 @@ import android.view.MenuItem;
 
 import com.danielvilha.javatvshow.R;
 import com.danielvilha.javatvshow.ui.go.GoFragment;
-import com.danielvilha.javatvshow.ui.shows.TvShowsFragment;
+import com.danielvilha.javatvshow.ui.items.TopRatedItemsFragment;
 
 /**
  * Created by danielvilha on 18/10/20
@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         if (item.getItemId() == R.id.sort_button) {
-            TvShowsFragment fragment = new TvShowsFragment();
-            fragment.clickMenu();
+            TopRatedItemsFragment fragment = new TopRatedItemsFragment();
+            fragment.sortButtonClick();
         }
 
         return super.onOptionsItemSelected(item);

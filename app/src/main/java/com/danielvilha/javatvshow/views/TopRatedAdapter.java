@@ -13,8 +13,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.danielvilha.javatvshow.R;
-import com.danielvilha.javatvshow.object.TvShow;
-import com.danielvilha.javatvshow.ui.show.TvShowFragment;
+import com.danielvilha.javatvshow.models.TopRated;
+import com.danielvilha.javatvshow.ui.result.TopRatedResultFragment;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -22,45 +22,45 @@ import java.util.ArrayList;
 /**
  * Created by danielvilha on 18/10/20
  * https://github.com/danielvilha
- * {@link RecyclerView.Adapter} that can display a {@link TvShow.TvShowItem}.
+ * {@link RecyclerView.Adapter} that can display a {@link TopRated.TopRatedResult}.
  */
-public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.ViewHolder> {
+public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHolder> {
 
-    private final ArrayList<TvShow.TvShowItem> mValues;
+    private final ArrayList<TopRated.TopRatedResult> mResult;
     private final FragmentActivity mActivity;
 
-    public TvShowAdapter(ArrayList<TvShow.TvShowItem> items, FragmentActivity activity) {
-        mValues = items;
+    public TopRatedAdapter(ArrayList<TopRated.TopRatedResult> items, FragmentActivity activity) {
+        mResult = items;
         mActivity = activity;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tv_show, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_top_rated, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.name.setText(mValues.get(position).name);
-        Picasso.get().load("https://image.tmdb.org/t/p/w500/" + mValues.get(position).poster_path).into(holder.poster_path);
+        holder.name.setText(mResult.get(position).name);
+        Picasso.get().load("https://image.tmdb.org/t/p/w500/" + mResult.get(position).poster_path).into(holder.poster_path);
 
         holder.itemView.setOnClickListener(view -> {
-            TvShow.TvShowItem item = mValues.get(position);
+            TopRated.TopRatedResult item = mResult.get(position);
 
-            Fragment newFragment = TvShowFragment.newInstance(item);
+            Fragment newFragment = TopRatedResultFragment.newInstance(item);
             FragmentTransaction transaction = mActivity.getSupportFragmentManager().beginTransaction();
 
             transaction.replace(R.id.container, newFragment);
-            transaction.addToBackStack(TvShowFragment.TAG);
+            transaction.addToBackStack(TopRatedResultFragment.TAG);
             transaction.commit();
         });
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return mResult.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -71,8 +71,8 @@ public class TvShowAdapter extends RecyclerView.Adapter<TvShowAdapter.ViewHolder
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            name = (TextView) view.findViewById(R.id.name);
-            poster_path = (ImageView) view.findViewById(R.id.poster_path);
+            name = view.findViewById(R.id.name);
+            poster_path = view.findViewById(R.id.poster_path);
         }
     }
 }

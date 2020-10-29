@@ -14,7 +14,9 @@ import android.widget.Button;
 
 import com.danielvilha.javatvshow.ui.MainActivity;
 import com.danielvilha.javatvshow.R;
-import com.danielvilha.javatvshow.ui.shows.TvShowsFragment;
+import com.danielvilha.javatvshow.ui.items.TopRatedItemsFragment;
+
+import java.util.Objects;
 
 /**
  * Created by danielvilha on 18/10/20
@@ -39,15 +41,15 @@ public class GoFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        ((MainActivity) getActivity()).toolbar.setTitle(getString(R.string.app_name));
+        ((MainActivity) Objects.requireNonNull(getActivity())).toolbar.setTitle(getString(R.string.app_name));
 
         Button buttonGo = getActivity().findViewById(R.id.button_go);
         buttonGo.setOnClickListener(view -> {
-            Fragment newFragment = new TvShowsFragment();
+            Fragment newFragment = new TopRatedItemsFragment();
             FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
 
             transaction.replace(R.id.container, newFragment);
-            transaction.addToBackStack(TvShowsFragment.TAG);
+            transaction.addToBackStack(TopRatedItemsFragment.TAG);
             transaction.commit();
         });
     }

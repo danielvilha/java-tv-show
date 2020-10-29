@@ -5,14 +5,12 @@ import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
-import com.danielvilha.javatvshow.object.TvShow;
+import com.danielvilha.javatvshow.models.TopRated;
 import com.danielvilha.javatvshow.service.ApiService;
 import com.danielvilha.javatvshow.service.RetrofitBuilder;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
-import java.io.IOException;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -24,6 +22,8 @@ import io.reactivex.schedulers.Schedulers;
 import static org.junit.Assert.*;
 
 /**
+ * Created by danielvilha on 18/10/20
+ * https://github.com/danielvilha
  * Instrumented test, which will execute on an Android device.
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
@@ -38,19 +38,19 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void moviesList() {
+    public void topRatedList() {
         ApiService api = new RetrofitBuilder().retrofit().create(ApiService.class);
-        Observable<TvShow> service = api.getMovie();
-        final TvShow[] item = new TvShow[0];
+        Observable<TopRated> service = api.getTopRated(1);
+        final TopRated[] item = new TopRated[0];
 
         service.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Observer<TvShow>() {
+                .subscribe(new Observer<TopRated>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) { }
 
                     @Override
-                    public void onNext(@NonNull TvShow tvShow) {
+                    public void onNext(@NonNull TopRated tvShow) {
                         item[0] = tvShow;
                     }
 

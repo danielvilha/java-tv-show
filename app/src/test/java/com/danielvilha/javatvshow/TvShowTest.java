@@ -1,21 +1,17 @@
 package com.danielvilha.javatvshow;
 
-import com.danielvilha.javatvshow.object.TvShow;
+import com.danielvilha.javatvshow.models.TopRated;
 import com.danielvilha.javatvshow.service.RetrofitBuilder;
 import com.danielvilha.javatvshow.service.ApiService;
 
 import org.junit.Test;
 
-import java.io.IOException;
-
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import static org.junit.Assert.assertNotNull;
-
 
 /**
  * Created by danielvilha on 18/10/20
@@ -28,15 +24,15 @@ public class TvShowTest {
     @Test
     public void tvShowNotNull() {
         ApiService api = new RetrofitBuilder().retrofit().create(ApiService.class);
-        Observable<TvShow> service = api.getMovie();
+        Observable<TopRated> service = api.getTopRated(1);
         service.subscribeOn(Schedulers.io())
-                .subscribe(new Observer<TvShow>() {
+                .subscribe(new Observer<TopRated>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) { }
 
                     @Override
-                    public void onNext(@NonNull TvShow tvShow) {
-                        assertNotNull(tvShow);
+                    public void onNext(@NonNull TopRated topRated) {
+                        assertNotNull(topRated);
                     }
 
                     @Override

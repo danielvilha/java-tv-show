@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#1F000000"
-    tools:context=".ui.show.TvShowFragment">
+    tools:context=".ui.result.TopRatedResultFragment">
 
     <ScrollView
         android:layout_width="match_parent"
