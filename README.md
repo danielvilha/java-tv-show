@@ -19,9 +19,9 @@
 - [Picasso](https://square.github.io/picasso/)
 
 ### Screenshots
-Home Go | List Desending | List Ascending
---- | --- | ---
-![Image 01](/images/Screenshot_01.jpg) | ![Image 01](/images/Screenshot_02.jpg) | ![Image 03](/images/Screenshot_03.jpg)
+Home Go | List | List ascending sort | Detail
+--- | --- | --- | ---
+![Image 01](/images/Screenshot_01.jpg) | ![Image 01](/images/Screenshot_02.jpg) | ![Image 03](/images/Screenshot_03.jpg) | ![Image 04](/images/Screenshot_04.jpg)
 
 ## Licence
 Copyright 2020 Daniel Freitas Vilha

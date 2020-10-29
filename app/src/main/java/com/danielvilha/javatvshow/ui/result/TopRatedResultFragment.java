@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.danielvilha.javatvshow.resources.URLs;
 import com.danielvilha.javatvshow.models.TopRated;
 import com.danielvilha.javatvshow.ui.MainActivity;
 import com.danielvilha.javatvshow.R;
@@ -86,7 +87,7 @@ public class TopRatedResultFragment extends Fragment {
         TextView origin_country = getActivity().findViewById(R.id.origin_country);
         TextView overview = getActivity().findViewById(R.id.overview);
 
-        Picasso.get().load("https://image.tmdb.org/t/p/w220_and_h330_face" + result.poster_path).into(poster_path);
+        Picasso.get().load(URLs.RESULT_URL + result.poster_path).into(poster_path);
         id.setText(result.id.toString());
         name.setText(result.name);
         original_name.setText(result.original_name);

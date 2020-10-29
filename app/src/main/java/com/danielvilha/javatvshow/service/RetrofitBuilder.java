@@ -1,5 +1,6 @@
 package com.danielvilha.javatvshow.service;
 
+import com.danielvilha.javatvshow.resources.URLs;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -21,7 +22,7 @@ public class RetrofitBuilder {
                 .setLenient()
                 .create();
 
-        String BASE_URL = "https://api.themoviedb.org/";
+        String BASE_URL = URLs.BASE_URL;
         return new Retrofit.Builder()
                 .client(client)
                 .baseUrl(BASE_URL)

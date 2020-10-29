@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.danielvilha.javatvshow.resources.URLs;
 import com.danielvilha.javatvshow.R;
 import com.danielvilha.javatvshow.models.TopRated;
 import com.danielvilha.javatvshow.ui.result.TopRatedResultFragment;
@@ -44,7 +45,7 @@ public class TopRatedAdapter extends RecyclerView.Adapter<TopRatedAdapter.ViewHo
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.name.setText(mResult.get(position).name);
-        Picasso.get().load("https://image.tmdb.org/t/p/w500/" + mResult.get(position).poster_path).into(holder.poster_path);
+        Picasso.get().load(URLs.ADAPTER_URL + mResult.get(position).poster_path).into(holder.poster_path);
 
         holder.itemView.setOnClickListener(view -> {
             TopRated.TopRatedResult item = mResult.get(position);
