@@ -11,7 +11,7 @@
 - Customisations: 0/5
 - UI Tests: ✅
 - Unit Tests: ✅
-- Functionality: 4/5
+- Functionality: ✅
 
 ### Libraries used in the Project
 - [RxJava](https://github.com/ReactiveX/RxAndroid)
