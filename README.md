@@ -5,7 +5,7 @@
 
 ### Something I need to change
 - Structure (folders and organisation): ✅
-- Tidiness (keep code nicely presented): 4/5
+- Tidiness (keep code nicely presented): ✅
 - Practices (use of patterns and platform-specific best practices): 3/5
 - Frameworks: ✅
 - Customisations: 0/5
